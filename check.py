@@ -12,8 +12,8 @@ def cheсk_second_name(student_second_name:str='петров')->bool:
         return True
 
 
-def check_class(class_number:int=11)->bool:	
-    if class_number>11 or class_number<1:
+def check_class(class_number:int)->bool:	
+    if int(class_number)>11 or int(class_number)<1:
         return False
     else:
         return True
@@ -40,13 +40,13 @@ def student_id(id:int=555555)->bool:
         return True
 
 def check_quarter(quarter:int=4)->bool:	
-    if quarter>4 or quarter<1:
+    if int(quarter)>4 or int(quarter)<1:
         return False
     else:
         return True
 
 def check_grade(grade:int=5)->bool:	
-    if grade>5 or grade<2:
+    if int(grade)>5 or int(grade)<2:
         return False
     else:
         return True
