@@ -41,7 +41,6 @@ def student_id_filter():
                 sub_list=line.split('|')
                 if new_grades_list[i][1] == sub_list[0]:
                     new_grades_list[i][1]=sub_list[1].rstrip('\n')
-                    print(new_grades_list[i][1])
         count +=1
 
     ie.top_line1()
