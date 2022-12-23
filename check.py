@@ -12,7 +12,9 @@ def cheсk_second_name(student_second_name:str='петров')->bool:
         return True
 
 
-def check_class(class_number:int)->bool:	
+def check_class(class_number:str)->bool:
+    if class_number.isdigit() == False:
+        return False	
     if int(class_number)>11 or int(class_number)<1:
         return False
     else:
@@ -33,7 +35,9 @@ def check_subject(subject : str='биология')->bool:
     else:
         return True
 
-def student_id(id:int=555555)->bool:
+def student_id(id:str)->bool:
+    if id.isdigit() == False:
+        return False
     if len(str(id))>6 or len(str(id))<4:
         return False
     else:
@@ -50,3 +54,12 @@ def check_grade(grade:int=5)->bool:
         return False
     else:
         return True
+
+################
+
+def check_item_menu(item_menu:str)->bool:
+    if 	item_menu.isdigit() and int(item_menu)>0 and int(item_menu)<6:
+        return True
+    else:
+        return False    
+    
