@@ -11,6 +11,8 @@ def find_student(id_student: int)-> str:
                     id_data = id_data + line[i]
                     i += 1
                 if id_student == int(id_data):
+                    print_line = line.split('|')
+                    print(f'Имя:{print_line[1]}\nФамилия: {print_line[2]} \nID:{print_line[0]}\nКласс: {print_line[3]}{print_line[4]}')                    
                     return line
         return -1
     
