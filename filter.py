@@ -21,34 +21,33 @@ def read_from_csv(path_file) -> List[str]:
 
 def student_id_filter():
     student_list = read_from_csv('student.csv')
-    # print(student_list) # проверка УДАЛИТЬ!!!
-    subject_list = read_from_csv('school_subject.csv')
-    # print(subject_list) # проверка УДАЛИТЬ!!!
     grades_list = read_from_csv('grades.csv')
-    # print(grades_list) # проверка УДАЛИТЬ!!!
-    id_filter_criterion = ie.get_id_student() # работает только если в модуле find файлы csv                
+    id_filter_criterion = ie.get_id_student()                
     new_grades_list = []
     for row in grades_list:
         if row[0] == id_filter_criterion:
             new_grades_list.append(row)
-    # print(new_grades_list) # проверка УДАЛИТЬ!!!
 
     for row in student_list:
         if row[0] == id_filter_criterion:
             student_name = row[1] + ' ' + row[2]
-    # print(student_name) # проверка УДАЛИТЬ!!!
 
     for i in range(0, len(new_grades_list)):
         count = 0
         new_grades_list[i][0] = student_name
-        # new_grades_list[i][1] = subject_name # как-то надо вытащить из списка предметов название по id в новом списке оценок
+        with open('school_subject.csv', 'r', encoding='utf-8') as file_sub:
+            sub_list=[]
+            for line in file_sub:
+                sub_list=line.split('|')
+                if new_grades_list[i][1] == sub_list[0]:
+                    new_grades_list[i][1]=sub_list[1].rstrip('\n')
+                    print(new_grades_list[i][1])
         count +=1
-    # print(new_grades_list) # проверка УДАЛИТЬ!!!
 
     ie.top_line1()
     count = 0
     for row in new_grades_list:
-        print(f' {row[0]}|\t\t{row[1]}      |\t  {row[2]} |\t     {row[3]} |\t{row[4]} |\t   {row[5]}')
+        print(f' {row[0]}|\t    {row[1]} |\t  {row[2]} |\t     {row[3]} |\t{row[4]} |\t  {row[5]}')
     count += 1
 
 
@@ -72,8 +71,5 @@ def class_filter() -> List[str]:
         print(f' {row[0]}   |\t{row[1]}|\t{row[2]}|\t   {row[3]} |\t   {row[4]}')
     count += 1
 
-
-
-
-# student_id_filter()
-# class_filter() # проверено, работает
+student_id_filter()
+class_filter()
