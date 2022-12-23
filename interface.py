@@ -32,6 +32,17 @@ def get_name():
         name = input('Введите имя: ')
     return name
 
+
+
+
+
+
+
+
+
+
+
+
 # функция для отображения списка учеников при фильтрации по классу и литере
 def top_line():
     '''Печатает шапку'''
@@ -67,3 +78,28 @@ def error_menu_item():
 
 def create_success():
     print('Данные добавлены!')
+
+############################################################################################
+def error():
+    print('ошибка')
+
+def get_subject():
+    '''Запрашивает у пользовтеля название предмета, проверяет верность введенных данных'''
+    subject = ''
+    while not check.check_name(subject):
+        subject = input('Введите предмет: ')
+    return subject        
+
+def give_num():
+    '''Запрашивает у пользовтеля оценку, проверяет верность введенных данных'''
+    num = ''
+    while not check.check_grade(num):
+        num = input('Оценка: ')
+    return num 
+        
+def give_num_quarter():
+    '''Запрашивает у пользовтеля номер четверти, проверяет верность введенных данных'''
+    num = ''
+    while not check.check_quarter(num):
+        num = input('Номер четверти: ')
+    return num     
