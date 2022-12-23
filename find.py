@@ -1,8 +1,8 @@
-
 def find_student(id_student: int)-> str:
     """поиcк по id ученика возвращет строку [айди имя фамилия класс литера]"""
     
-    with open('students.txt', "r", encoding='UTF-8') as data_file:
+    with open('students.csv', "r", encoding='UTF-8') as data_file:
+        import csv
         for line in data_file.readlines():
             if str(id_student) in line:
                 i = 0
@@ -13,11 +13,12 @@ def find_student(id_student: int)-> str:
                 if id_student == int(id_data):
                     return line
         return -1
-
-
+    
 def find_id_student(surname: str)-> int:
     """поиcк по фамилии возвращет id ученика"""
-    with open('students.txt', "r", encoding='UTF-8') as data_file:
+    
+    with open('students.csv', "r", encoding='UTF-8') as data_file:
+        import csv
         for line in data_file.readlines():
             if surname in line:
                 i = 0
@@ -27,5 +28,5 @@ def find_id_student(surname: str)-> int:
                     i += 1
                 return int(id_student)
         else:
-            return -1
+            return -1    
 
