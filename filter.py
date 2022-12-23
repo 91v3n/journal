@@ -70,6 +70,3 @@ def class_filter() -> List[str]:
     for row in new_class_list:
         print(f' {row[0]}   |\t{row[1]}|\t{row[2]}|\t   {row[3]} |\t   {row[4]}')
     count += 1
-
-student_id_filter()
-class_filter()
