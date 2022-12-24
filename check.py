@@ -81,7 +81,7 @@ def check_grade(grade:str)->bool:
     else:
         return True
 
-
+################
 
 def check_item_menu(item_menu:str)->bool:
     """возвращает true если строка из цифры от 1 до 5 включительно

@@ -11,17 +11,14 @@ def start():
         i= interface.select_menu_item()
         if i == 1:
             create.create_student()
-        elif i == 2:
-            ##    
-            create.create_student()
+        elif i == 2:            
+            add_grade.add_grade()
         elif i == 3:
-            ## 
             id = int(interface.get_id_student())       
             find.find_student(id)   
         elif i == 4:
-            filter.student_id_filter()
-            ##        
+            filter.student_id_filter()   
         elif i == 5:
             filter.class_filter()
-            ##    
+
     
